@@ -1,0 +1,54 @@
+<!--
+  File Name: contact.ejs
+  Student: Adam Hodgins (301332994)
+  Date: October 3 2023
+  Comment: Structure for the contact page.
+-->
+
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Contact Me</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets\style.css">
+  </head>
+
+  <body>
+    <!--Imports the Navigation and Footer partials for the side panel-->
+    <div id="hideNav"><%- include('partials/nav.ejs') %>
+        <div class="footer"><%- include('partials/footer.ejs') %></div>
+    </div>
+    <div id="picture-bg">
+      <div id="container">
+        <a href="/"><img src="/images/logo.png" alt="" class="logo"></a>
+        <a><img src="/images/menu.png" alt="" class="menu" id="menu"></a>
+        <h1 class="title">Leave <span class="accent">Me</span> a message</h1>
+        <!--Creates a flex container, the email form and the contact details-->
+        <div class="infoContainer">
+          <div class="info" style="text-align: left;">
+            <form action="/contact" method="post" id="contactForm">
+              <label for="Name">Name:</label><br>
+              <input type="text" id="Name" class="custom-textbox" name="Name" required><br><br>
+              <label for="email">Email Address:</label><br>
+              <input type="email" id="email" class="custom-textbox" name="email" required><br><br>
+              <label for="message" class="">Message:</label><br>
+              <textarea id="message" name="message" rows="7" class="custom-textbox" required></textarea><br><br>
+              <button type="submit">>Send</button>
+          </div>
+          </form>
+
+          <div class="info" style="text-align: left;">
+            <br><br>
+            <h1>Find Me - Adam Hodgins</h1>
+            <hr>
+            <ul class="find" style="padding-left:0;">
+              <li><a href="https://www.linkedin.com/in/adam-hodgins/" target="_blank"> >LinkedIn </a></li>
+              <li><a href="https://github.com/Equinar" target="_blank">>Github</a></li>
+              <li><a href="mailto:hodginsbusiness@gmail.com">>email: hodginsbusiness@gmail.com</a></li>
+            </ul>
+          </div>
+        </div>
+  </body>
+  <script src="javascripts\menu.js"></script>
+
+</html>

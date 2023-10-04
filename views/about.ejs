@@ -1,0 +1,48 @@
+<!--
+  File Name: about.ejs
+  Student: Adam Hodgins (301332994)
+  Date: October 3 2023
+  Comment: Structure for the about page. Some in line styling is done to not bloat the main styles.css file  
+-->
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>About Me</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets\style.css">
+  </head>
+
+  <body>
+    <!--Imports the Navigation and Footer partials for the side panel-->
+    <div id="hideNav"><%- include('partials/nav.ejs') %>
+        <div class="footer"><%- include('partials/footer.ejs') %></div>
+    </div>
+    <div id="picture-bg">
+      <div id="container">
+        <a href="/"><img src="/images/logo.png" alt="" class="logo"></a>
+        <a><img src="/images/menu.png" alt="" class="menu" id="menu"></a>
+        <h1 class="title">About <span class="accent">Me</span></h1>
+        <!--Creates a flex container, to house the profile picture and personal information-->
+        <div class="infoContainer">
+          <div class="info">
+            <img src="/images/headshot.jpeg" alt="headshot" style="width:300px; height:auto;">
+            <a href="/images/AdamHodgins_resume.pdf" target="_blank">
+              <p style="font-size:1.5rem;">My Resume</p>
+            </a>
+          </div>
+          <div class="info">
+            <h1 class="nomarg accent" style="font-size:2.8rem;">Adam Hodgins</h1>
+            <p class="nomarg darker specialties">C#,HTML,CSS,NodeJS,Python</p>
+            <hr class="full">
+            <p style="font-size:1.3rem;">I'm Adam, a lifelong coding enthusiast. I was self taught for 20 years before
+              finally taking the plunge to get formally trained. Now, halfway through my degree and with previous
+              industry experience, I can't wait to continue building my future.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+  <script src="javascripts\menu.js"></script>
+
+</html>

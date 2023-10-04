@@ -1,0 +1,53 @@
+<!--
+  File Name: projects.ejs
+  Student: Adam Hodgins (301332994)
+  Date: October 3 2023
+  Comment: Structure for the projects page.  
+-->
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Solo Projects</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets\style.css">
+  </head>
+
+  <body>
+    <!--Imports the Navigation and Footer partials for the side panel-->
+    <div id="hideNav"><%- include('partials/nav.ejs') %>
+        <div class="footer"><%- include('partials/footer.ejs') %></div>
+    </div>
+    <div id="picture-bg">
+      <div id="container">
+        <a href="/"><img src="/images/logo.png" alt="" class="logo"></a>
+        <a><img src="/images/menu.png" alt="" class="menu" id="menu"></a>
+        <br><br>
+        <h1 class="title">What I'm <span class="accent">Working On</span></h1>
+        <div class="project">
+          <!--Loops through each set of information from the projects.js route file and creates a Project Card for it-->
+          <% projects.forEach(project=> { %>
+            <div class="project-card">
+              <div class="projectL">
+                <img class="project-image" src="<%= project.image %>" alt="<%= project.name %>">
+              </div>
+              <div class="projectR">
+                <p class="progress accent">
+                  <%= project.progress %>
+                </p>
+                <h2 class="projectName">
+                  <%= project.name %>
+                </h2>
+                <hr>
+                <p>
+                  <%= project.description %>
+                </p>
+              </div>
+            </div>
+            <% }); %>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="javascripts\menu.js"></script>
+
+</html>

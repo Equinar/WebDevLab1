@@ -1,0 +1,50 @@
+<!--
+  File Name: services.ejs
+  Student: Adam Hodgins (301332994)
+  Date: October 3 2023
+  Comment: Structure for the services page.  
+-->
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Services</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets\style.css">
+  </head>
+
+  <body>
+    <!--Imports the Navigation and Footer partials for the side panel-->
+    <div id="hideNav"><%- include('partials/nav.ejs') %>
+        <div class="footer"><%- include('partials/footer.ejs') %></div>
+    </div>
+    <div id="picture-bg">
+      <div id="container">
+        <a href="/"><img src="/images/logo.png" alt="" class="logo"></a>
+        <a><img src="/images/menu.png" alt="" class="menu" id="menu"></a>
+        <h1 class="title">What I <span class="accent">Offer</span></h1>
+        <!--Creates a flex container, the email form and the contact details-->
+        <div class="infoContainer">
+          <!--Loops through each set of information from the services.js route file and creates a Service (info) div for it-->
+          <% services.forEach(service=> { %>
+            <div class="info">
+              <h2 class="projectName accent">
+                <%= service.name %>
+              </h2>
+              <h3>Available: <%= service.available %>
+              </h3>
+              <p class="description">
+                <%= service.description %>
+              </p>
+            </div>
+            <% }); %>
+        </div>
+        <!--Creates a link to the contact page-->
+        <div style="text-align:center;"><a href="/contact">
+            <p style="font-size:1.5rem;">>Contact Me</p>
+          </a></div>
+      </div>
+    </div>
+  </body>
+  <script src="javascripts\menu.js"></script>
+
+</html>

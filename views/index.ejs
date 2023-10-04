@@ -1,0 +1,34 @@
+<!--
+  File Name: index.ejs
+  Student: Adam Hodgins (301332994)
+  Date: October 3 2023
+  Comment:  Sets up structure for the home/index page of the website.
+-->
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Adam Hodgins - Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets\style.css">
+  </head>
+
+  <body>
+    <!--Imports the Navigation and Footer partials for the side panel-->
+    <div id="hideNav"><%- include('partials/nav.ejs') %>
+        <div class="footer"><%- include('partials/footer.ejs') %></div>
+    </div>
+    <div id="picture-bg">
+      <div id="container">
+        <a href="/"><img src="/images/logo.png" alt="" class="logo"></a>
+        <a><img src="/images/menu.png" alt="" class="menu" id="menu"></a>
+        <div class="homeCallout">
+          <h1 id="upper" class="close line anim-typewriter">Hi, im <span class="accent">Adam</span></h1>
+          <p id="lower" class="close  darker invisible">Learn. Implement. Repeat.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="javascripts\indexAnim.js"></script>
+  <script src="javascripts\menu.js"></script>
+
+</html>
